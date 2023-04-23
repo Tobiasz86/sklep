@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Kwi 2023, 00:33
+-- Czas generowania: 24 Kwi 2023, 00:51
 -- Wersja serwera: 10.4.17-MariaDB
 -- Wersja PHP: 7.3.27
 
@@ -66,22 +66,6 @@ CREATE TABLE `uzytkownicy` (
   `numer` varchar(15) COLLATE utf8_polish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
---
--- Zrzut danych tabeli `uzytkownicy`
---
-
-INSERT INTO `uzytkownicy` (`id`, `imie`, `nazwisko`, `nazwa`, `haslo`, `email`, `numer`) VALUES
-(1, 'Tomek', 'Tomek', 'Tomek', '$2y$10$UXIh.WnupY3h/iLS.M7MBulBAA/oWRuucQfX9wHtUtF1O7KRbjoTy', 'Tomek@Tomek.pl', '123456789'),
-(2, 'bobi', 'bobi', 'bobi', '$2y$10$LMTfsj3GPFUwGRi6DQnQcO3E1/khJaJOXzGvg8zLK1V136oo46lSO', 'bobi@bobi.pl', '999999999'),
-(3, 'taa', 'taa', 'taa', '$2y$10$z0YYGj4NYJhQ07vW5NjuBupGeQhlTxVHURgfVFm5lXA4.VO2ZnOyu', 'taa@taa.taa', '222222222'),
-(4, 'XDD', 'XDD', 'XDD', '$2y$10$ORDXyw73yA6XCTiPMQXjM.2drASekpUALKLtmLVBcPSAZvrqam8tC', 'XDD@XDD.XDD', '111111111'),
-(5, 'lol', 'lol', 'lol', '$2y$10$YjgZHRsCwm0DFk99QXObI.I0j7AApuH0nFMLHkRL2m.hEOI5tla8W', 'lol@lol.lol', '888888888'),
-(6, 'arab', 'arab', 'arab', '$2y$10$Mu6NcpfcSW/6EvAH49bcU.QQNJd1ZH/Xmg1tWVN7fS58343rSFLce', 'arab@arab.arab', '666666666'),
-(7, 'rak', 'rak', 'rak', '73aaff11f3ba9d37c1dd981356d88f29', 'rak@rak.rak', '444444444'),
-(8, 'Laska', 'Laska', 'laska', 'd41d8cd98f00b204e9800998ecf8427e', 'Laska@laska.laska', '777777777'),
-(9, 'Maks', 'Maks', 'Maks', 'a66f20981a72224bad4df65469ff2e63', 'Maks@Maks.Maks', '123456321'),
-(11, 'Seba', 'Seba', 'Seba', 'be0f7ad773a3887812346ed91c41e996', 'Seba@Seba.Seba', '999888777');
-
 -- --------------------------------------------------------
 
 --
@@ -94,18 +78,6 @@ CREATE TABLE `zamowienia` (
   `produkty` mediumtext COLLATE utf8_polish_ci DEFAULT NULL,
   `platnosc` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
-
---
--- Zrzut danych tabeli `zamowienia`
---
-
-INSERT INTO `zamowienia` (`id`, `id_uzytkownika`, `produkty`, `platnosc`) VALUES
-(15, 11, 'a:1:{i:0;s:1:\"1\";}', 'blik'),
-(16, 11, 'a:1:{i:0;s:1:\"1\";}', 'blik'),
-(18, 11, 'a:1:{i:0;s:1:\"2\";}', 'przelew'),
-(19, 11, 'a:4:{i:0;s:1:\"1\";i:1;s:1:\"3\";i:2;s:1:\"8\";i:3;s:1:\"7\";}', 'przelew'),
-(20, 11, 'a:1:{i:0;s:1:\"1\";}', 'blik'),
-(21, 11, 'a:2:{i:0;s:1:\"1\";i:1;s:1:\"2\";}', 'SMS');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -144,13 +116,13 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ograniczenia dla zrzutów tabel
